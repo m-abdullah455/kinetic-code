@@ -1,0 +1,154 @@
+[
+  {
+    "keywords": ["hi", "hello", "hey", "start", "help", "assalam", "salaam", "aoa"],
+    "question": "General Greeting",
+    "answer": "Hello! Welcome to FreshFind. I can help you find Pakistani markets like Saddar, Clifton, DHA, and Empress Market, check operating hours, or search for fresh organic produce!",
+    "quickReplies": ["Which markets are open today?", "Find organic tomatoes", "Markets in Saddar", "How to bookmark?"]
+  },
+  {
+    "keywords": ["open", "today", "schedule", "timing", "hours", "days"],
+    "question": "Which markets are open today?",
+    "answer": "Our directory lists operating hours for all 12 Pakistani markets! You can use the 'Filter by Day' tool on the Market Directory page or check the header status badge.",
+    "quickReplies": ["Saddar Market", "Clifton Sunday Market", "DHA Farmers Market", "Empress Market"]
+  },
+  {
+    "keywords": ["saddar", "karachi", "m1"],
+    "question": "Saddar Market details",
+    "answer": "Saddar Market is located in Saddar, Karachi at Preedy Street. It operates on Wednesdays, Saturdays, and Sundays (8:00 AM - 9:00 PM).",
+    "link": "m1",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "What produce is sold there?"]
+  },
+  {
+    "keywords": ["clifton", "sunday market", "itwar bazar", "m2"],
+    "question": "Clifton Sunday Market details",
+    "answer": "Clifton Sunday Market is at Block 8, Clifton, Karachi. Open Wednesdays, Fridays, and Sundays from 7:00 AM to 3:00 PM.",
+    "link": "m2",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Find fresh berries"]
+  },
+  {
+    "keywords": ["dha", "phase 5", "m3"],
+    "question": "DHA Farmers Market details",
+    "answer": "DHA Farmers Market is located at Phase 5, Commercial Area, DHA, Karachi. Open Monday, Friday, Saturday, and Sunday from 9:00 AM to 6:00 PM.",
+    "link": "m3",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Find leafy greens"]
+  },
+  {
+    "keywords": ["empress", "empress market", "m4"],
+    "question": "Empress Market details",
+    "answer": "Empress Market is located at Empress Market Grounds, Saddar, Karachi. Open Tuesdays, Thursdays, Saturdays, and Sundays from 8:00 AM to 8:00 PM.",
+    "link": "m4",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Free range eggs"]
+  },
+  {
+    "keywords": ["raja bazaar", "rawalpindi", "pindi", "m5"],
+    "question": "Raja Bazaar details",
+    "answer": "Raja Bazaar is located at Trunk Bazaar Road, Rawalpindi. Open Mondays, Wednesdays, and Fridays from 8:00 AM to 7:00 PM.",
+    "link": "m5",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Fresh basil"]
+  },
+  {
+    "keywords": ["liberty", "gulberg", "lahore", "m6"],
+    "question": "Liberty Market details",
+    "answer": "Liberty Market is located at Liberty Roundabout, Gulberg III, Lahore. Open Tuesdays, Thursdays, and Saturdays from 9:00 AM to 9:00 PM.",
+    "link": "m6",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Organic broccoli"]
+  },
+  {
+    "keywords": ["anarkali", "old city", "lahore", "m7"],
+    "question": "Anarkali Bazaar details",
+    "answer": "Anarkali Bazaar is located at Anarkali Street, Mall Road, Lahore. Open Mondays, Thursdays, and Sundays from 10:00 AM to 8:00 PM.",
+    "link": "m7",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Bell peppers"]
+  },
+  {
+    "keywords": ["tariq road", "pechs", "m8"],
+    "question": "Tariq Road Market details",
+    "answer": "Tariq Road Market is located at Main Tariq Road, PECHS Block 2, Karachi. Open Wednesdays, Saturdays, and Sundays from 10:00 AM to 10:00 PM.",
+    "link": "m8",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Fresh sourdough bread"]
+  },
+  {
+    "keywords": ["g-9", "islamabad", "itwar", "m9"],
+    "question": "G-9 Weekly Itwar Bazar details",
+    "answer": "G-9 Weekly Itwar Bazar is located at Sector G-9/1, Kashmir Highway, Islamabad. Open Tuesdays, Fridays, and Sundays from 7:00 AM to 6:00 PM.",
+    "link": "m9",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Sweet peaches"]
+  },
+  {
+    "keywords": ["zainab", "zainab market", "m10"],
+    "question": "Zainab Market details",
+    "answer": "Zainab Market is located at Abdullah Haroon Road, Saddar, Karachi. Open Mondays, Wednesdays, and Fridays from 11:00 AM to 9:00 PM.",
+    "link": "m10",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Organic avocados"]
+  },
+  {
+    "keywords": ["bohri", "bohri bazaar", "m11"],
+    "question": "Bohri Bazaar details",
+    "answer": "Bohri Bazaar is located at Bohri Bazaar Street, Saddar, Karachi. Open Thursdays, Saturdays, and Sundays from 10:00 AM to 8:00 PM.",
+    "link": "m11",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Organic whole milk"]
+  },
+  {
+    "keywords": ["hyderi", "north nazimabad", "m12"],
+    "question": "Hyderi Market details",
+    "answer": "Hyderi Market is located at Block H, North Nazimabad, Karachi. Open Tuesdays, Wednesdays, and Saturdays from 9:00 AM to 9:00 PM.",
+    "link": "m12",
+    "linkType": "market",
+    "quickReplies": ["Show Market Details", "Fresh spearmint"]
+  },
+  {
+    "keywords": ["tomato", "tomatoes", "p4"],
+    "question": "Where to find fresh tomatoes?",
+    "answer": "Heirloom Sindh Tomatoes are available at Saddar Market, DHA Farmers Market, Anarkali Bazaar, and Hyderi Market!",
+    "link": "p4",
+    "linkType": "produce",
+    "quickReplies": ["View Produce Guide", "Saddar Market"]
+  },
+  {
+    "keywords": ["spinach", "greens", "lettuce", "p1"],
+    "question": "Where to find leafy greens?",
+    "answer": "Organic Spinach & Leafy Greens are available at Saddar Market, DHA Farmers Market, Empress Market, and Zainab Market.",
+    "link": "p1",
+    "linkType": "produce",
+    "quickReplies": ["View Produce Guide"]
+  },
+  {
+    "keywords": ["strawberry", "strawberries", "fruit", "berries", "p2", "p13"],
+    "question": "Where to find fresh strawberries & berries?",
+    "answer": "Fresh strawberries and blueberries are available at Saddar Market, Clifton Sunday Market, Liberty Market, and Tariq Road Market!",
+    "link": "p2",
+    "linkType": "produce",
+    "quickReplies": ["View Produce Guide"]
+  },
+  {
+    "keywords": ["dairy", "cheese", "milk", "butter", "eggs", "honey", "p6", "p7", "p8", "p17", "p18"],
+    "question": "Where to find fresh dairy & farm eggs?",
+    "answer": "Artisanal Cheese, Raw Honey, Pasture Eggs, Organic Milk, and Butter are available at Saddar Market, Empress Market, Tariq Road, Liberty, and Bohri Bazaar.",
+    "link": "p6",
+    "linkType": "produce",
+    "quickReplies": ["View Produce Guide"]
+  },
+  {
+    "keywords": ["bookmark", "favorite", "save", "notes"],
+    "question": "How to bookmark items and add notes?",
+    "answer": "Click the Heart icon on any market or produce card to add it to your Bookmarks. You can also add personal session notes and export your saved list from the Bookmarks section!",
+    "quickReplies": ["Go to Bookmarks", "Which markets are open today?"]
+  },
+  {
+    "keywords": ["contact", "address", "phone", "support", "location"],
+    "question": "How to contact FreshFind?",
+    "answer": "You can reach us through our Contact page form or email us at support@freshfind.org or call +92 3412345667.",
+    "quickReplies": ["Go to Contact Us", "About Us"]
+  }
+]

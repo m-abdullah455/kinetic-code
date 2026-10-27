@@ -1,0 +1,182 @@
+[
+  {
+    "id": "p1",
+    "name": "Organic Spinach & Leafy Greens",
+    "category": "Vegetables",
+    "season": "Spring & Autumn",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=500&q=80",
+    "description": "Crisp, nutrient-rich spinach leaves harvested daily from local chemical-free farms.",
+    "nutrition": "High in Iron, Vitamin A, Vitamin C, and Potassium.",
+    "markets": ["m1", "m3", "m4", "m10"]
+  },
+  {
+    "id": "p2",
+    "name": "Fresh Strawberries",
+    "category": "Fruits",
+    "season": "Summer",
+    "image": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=500&q=80",
+    "description": "Sweet, ruby-red juicy strawberries picked at peak ripeness.",
+    "nutrition": "Rich in Antioxidants, Vitamin C, and Manganese.",
+    "markets": ["m1", "m2", "m6"]
+  },
+  {
+    "id": "p3",
+    "name": "Crisp Honeycrisp Apples",
+    "category": "Fruits",
+    "season": "Autumn",
+    "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=500&q=80",
+    "description": "Extra crunchy and perfectly balanced sweet-tart apples from mountain orchards.",
+    "nutrition": "High in Dietary Fiber and Vitamin C.",
+    "markets": ["m2", "m4", "m9"]
+  },
+  {
+    "id": "p4",
+    "name": "Heirloom Tomatoes",
+    "category": "Vegetables",
+    "season": "Summer",
+    "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=500&q=80",
+    "description": "Flavor-packed heritage tomatoes in vibrant shades of red, yellow, and deep purple.",
+    "nutrition": "Abundant source of Lycopene, Potassium, and Folate.",
+    "markets": ["m1", "m3", "m7", "m12"]
+  },
+  {
+    "id": "p5",
+    "name": "Fresh Culinary Basill",
+    "category": "Herbs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=400&q=80",
+    "description": "Aromatic sweet Italian basil bunches, ideal for fresh pesto and Caprese salads.",
+    "nutrition": "Contains Essential Oils, Vitamin K, and Anti-inflammatory properties.",
+    "markets": ["m2", "m5", "m12"]
+  },
+  {
+    "id": "p6",
+    "name": "Artisanal Goat Cheese",
+    "category": "Dairy & Eggs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=500&q=80",
+    "description": "Creamy, handcrafted goat milk cheese seasoned with sea salt and garlic.",
+    "nutrition": "Rich in Calcium, Healthy Fatty Acids, and Protein.",
+    "markets": ["m1", "m3", "m8"]
+  },
+  {
+    "id": "p7",
+    "name": "Raw Wildflower Honey",
+    "category": "Dairy & Eggs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80",
+    "description": "Unpasteurized local wildflower honey packed with natural enzymes and pollen.",
+    "nutrition": "Natural antibacterial properties and soothing energy boost.",
+    "markets": ["m2", "m5", "m8"]
+  },
+  {
+    "id": "p8",
+    "name": "Pasture-Raised Free-Range Eggs",
+    "category": "Dairy & Eggs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=600&q=80",
+    "description": "Farm fresh eggs with golden yolks from hens raised on open green pastures.",
+    "nutrition": "High quality Protein, Omega-3 fatty acids, and Vitamin D.",
+    "markets": ["m1", "m4", "m7", "m10"]
+  },
+  {
+    "id": "p9",
+    "name": "Organic Rainbow Carrots",
+    "category": "Vegetables",
+    "season": "Autumn & Winter",
+    "image": "https://cnt.farmerstoyou.com/spree/images/attachments/000/012/988/small/organic_bunched_rainbow_carrots_1408.jpg?1672238962",
+    "description": "Sweet, crunchy multi-colored carrots rich in natural flavor.",
+    "nutrition": "Packed with Beta-Carotene, Fiber, and Antioxidants.",
+    "markets": ["m3", "m5", "m9", "m11"]
+  },
+  {
+    "id": "p10",
+    "name": "Fresh Hass Avocados",
+    "category": "Fruits",
+    "season": "Spring & Summer",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=500&q=80",
+    "description": "Rich and creamy dark-skinned Hass avocados grown locally in coastal farms.",
+    "nutrition": "Healthy Monounsaturated Fats, Fiber, and Vitamin E.",
+    "markets": ["m4", "m5", "m10"]
+  },
+  {
+    "id": "p11",
+    "name": "Farm-Fresh Broccoli",
+    "category": "Vegetables",
+    "season": "Autumn & Winter",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=500&q=80",
+    "description": "Tender and crunchy green broccoli florets packed with natural goodness.",
+    "nutrition": "High in Sulforaphane, Fiber, Vitamin C, and Calcium.",
+    "markets": ["m3", "m6", "m11"]
+  },
+  {
+    "id": "p12",
+    "name": "Sweet Bell Peppers",
+    "category": "Vegetables",
+    "season": "Summer",
+    "image": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?auto=format&fit=crop&w=500&q=80",
+    "description": "Vibrant red, yellow, and green bell peppers freshly picked from sunlit gardens.",
+    "nutrition": "Loaded with Vitamin C, Vitamin B6, and Folate.",
+    "markets": ["m4", "m7", "m10"]
+  },
+  {
+    "id": "p13",
+    "name": "Fresh Organic Blueberries",
+    "category": "Fruits",
+    "season": "Summer",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=500&q=80",
+    "description": "Plump, sweet organic blueberries bursting with juice and antioxidants.",
+    "nutrition": "Superfood rich in Anthocyanins, Vitamin C, and K.",
+    "markets": ["m2", "m6", "m8", "m11"]
+  },
+  {
+    "id": "p14",
+    "name": "Sweet Juicy Peaches",
+    "category": "Fruits",
+    "season": "Summer",
+    "image": "https://images.unsplash.com/photo-1629828874514-c1e5103f2150?auto=format&fit=crop&w=500&q=80",
+    "description": "Fragrant orchard-ripened yellow peaches with velvety soft skin.",
+    "nutrition": "Great source of Vitamin A, Vitamin C, and Dietary Fiber.",
+    "markets": ["m5", "m7", "m9"]
+  },
+  {
+    "id": "p15",
+    "name": "Fresh Spearmint Bunch",
+    "category": "Herbs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1628556270448-4d4e4148e1b1?auto=format&fit=crop&w=500&q=80",
+    "description": "Refreshing aromatic spearmint leaves for teas, lemonades, and garnishes.",
+    "nutrition": "Aids digestion and provides natural menthol aromatherapeutics.",
+    "markets": ["m2", "m6", "m12"]
+  },
+  {
+    "id": "p16",
+    "name": "Organic Rosemary & Thyme",
+    "category": "Herbs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=500&q=80",
+    "description": "Woody aromatic herb sprigs perfect for roasts, soups, and marinades.",
+    "nutrition": "High in Rosmarinic acid, Antioxidants, and Minerals.",
+    "markets": ["m5", "m9"]
+  },
+  {
+    "id": "p17",
+    "name": "Farmhouse Golden Butter",
+    "category": "Dairy & Eggs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=500&q=80",
+    "description": "Churned slow-pasteurized pasture cream butter with rich natural flavor.",
+    "nutrition": "Rich source of Vitamin A and Healthy Fats.",
+    "markets": ["m3", "m6", "m8", "m11"]
+  },
+  {
+    "id": "p18",
+    "name": "Organic Whole Milk",
+    "category": "Dairy & Eggs",
+    "season": "All Year",
+    "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=500&q=80",
+    "description": "Fresh unhomogenized grass-fed cow milk with natural cream top.",
+    "nutrition": "High in Calcium, Protein, and Vitamin D.",
+    "markets": ["m4", "m11"]
+  }
+]

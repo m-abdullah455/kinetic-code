@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshFind</title>
+  <meta name="description"
+    content="FreshFind helps community residents locate nearby farmers markets, check operating hours, explore seasonal produce, and connect with local growers.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="hdr-top">
+    <div class="hdr-item">
+      <i class="far fa-clock"></i> <span id="clock-txt">Loading clock...</span>
+    </div>
+    <div class="hdr-item">
+      <span id="open-bdg" class="bdg-pill">Checking market schedule...</span>
+    </div>
+    <div class="hdr-item">
+      <i class="fas fa-users"></i> Visitors: <strong id="v-count">1,043</strong>
+    </div>
+  </div>
+  <nav class="main-nav">
+    
+    <div class="nav-box">
+      <div class="logo-box lkn-btn" data-target="home-sec">
+        <div>
+          FreshFind
+          <span class="logo-sub">Fresh All Along</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a class="n-link active" data-target="home-sec">Home</a></li>
+        <li><a class="n-link" data-target="mkts-sec">Market Directory</a></li>
+        <li><a class="n-link" data-target="prod-sec">Produce Guide</a></li>
+        <li><a class="n-link" data-target="bms-sec">Saved <span id="bm-cnt" class="bdg-cnt">0</span></a></li>
+        <li><a class="n-link" data-scroll="about-blk">About Us</a></li>
+        <li><a class="n-link" data-scroll="cnt-blk">Contact</a></li>
+      </ul>
+      <div class="nav-btns">
+        <button class="btn-p btn-sm find-market-btn" id="global-find-btn" type="button">
+  <i class="fas fa-location-dot"></i> Find a Market
+</button>
+<button class="btn-o btn-sm" id="login-btn" type="button">Login</button>
+<button class="btn-o btn-sm" id="signup-btn" type="button">Sign Up</button>
+
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="site-breadcrumb" id="site-breadcrumb">Home</div>
+    <section id="home-sec" class="pg-sec act-sec">
+      <div class="hero-slider">
+        <div class="slide active" style="background-image: linear-gradient(rgba(74, 73, 73, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80');">
+          <div class="slide-content">
+            <h1>Fresh, Seasonal & Local Food Near You</h1>
+            <p>Discover neighborhood farmers markets, explore operating days & hours, and support local growers in your community.</p>
+            <button class="btn-p lkn-btn" data-target="mkts-sec">Explore All Markets</button>
+          </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(74, 73, 73, 0.55), rgba(0, 0, 0, 0.55)),  url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80');">
+          <div class="slide-content">
+           <h1>Currently Open Markets</h1>
+<p>Check which farmers markets are currently open and explore their details, hours, and available produce.</p>
+<button class="btn-p lkn-btn" data-target="mkts-sec">View Open Markets</button>
+          </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(74, 73, 73, 0.55), rgba(0, 0, 0, 0.55)),  url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=1200&q=80');">
+          <div class="slide-content">
+            <h1>Farm-Fresh Organic Produce & Seasonal Guide</h1>
+            <p>Check fresh fruits, leafy vegetables, herbs, and pasture eggs available this week.</p>
+            <button class="btn-p lkn-btn" data-target="prod-sec">Browse Produce Guide</button>
+          </div>
+        </div>
+        <button class="slider-btn prev-btn" id="hero-prev" aria-label="Previous Slide">&lt;</button>
+        <button class="slider-btn next-btn" id="hero-next" aria-label="Next Slide">&gt;</button>
+        <div class="slider-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+      <div class="srch-card">
+        <h3 style="margin-bottom: 16px; color: #000000;">Find a Market Near You</h3>
+        <div class="srch-grid">
+          <div class="form-box">
+            <label for="h-srch-inp">Keyword / Market Name</label>
+            <input type="text" id="h-srch-inp" class="form-inp" placeholder="e.g. Saddar Market, Clifton, DHA...">
+          </div>
+          <div class="form-box">
+            <label for="h-area-sel">Select Area / Neighborhood</label>
+            <select id="h-area-sel" class="form-inp">
+              <option value="">All Areas</option>
+            </select>
+          </div>
+          <div class="form-box">
+            <button class="btn-p" id="h-srch-btn" style="height: 40px; width: 100%; justify-content: center;">
+              Search Markets
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="sec-t-w">
+        <h2 class="sec-title">Featured Farmers Markets</h2>
+        <p class="sec-sub">Top community favorite markets open this week</p>
+      </div>
+      <div class="card-grid" id="feat-grid">
+      </div>
+      <div class="explore-more-wrap">
+  <button class="btn-o btn-sm" id="explore-more-markets">
+    Explore More Markets
+  </button>
+</div>
+      <div class="sec-t-w" style="margin-top: 50px;">
+        <h2 class="sec-title">Explore Produce Categories</h2>
+        <p class="sec-sub">Discover what is currently harvested in season across local farms</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card lkn-btn" data-target="prod-sec" onclick="filterProduce('Vegetables')">
+          <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=400&q=80"
+            alt="Fresh Vegetables" class="cat-img">
+          <h3>Fresh Vegetables</h3>
+          <small style="color:#000000;">Spinach, Tomatoes, Carrots</small>
+        </div>
+        <div class="cat-card lkn-btn" data-target="prod-sec" onclick="filterProduce('Fruits')">
+          <img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=400&q=80"
+            alt="Orchard Fruits" class="cat-img">
+          <h3>Orchard Fruits</h3>
+          <small style="color:#000000;">Strawberries, Apples, Avocados</small>
+        </div>
+        <div class="cat-card lkn-btn" data-target="prod-sec" onclick="filterProduce('Herbs')">
+          <img src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=400&q=80"
+            alt="Culinary Herbs" class="cat-img">
+          <h3>Culinary Herbs</h3>
+          <small style="color:#000000;">Fresh Basil, Mint, Parsley</small>
+        </div>
+        <div class="cat-card lkn-btn" data-target="prod-sec" onclick="filterProduce('Dairy & Eggs')">
+          <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=400&q=80"
+            alt="Dairy & Farm Eggs" class="cat-img">
+          <h3>Dairy & Farm Eggs</h3>
+          <small style="color:#000000;">Goat Cheese, Raw Honey, Eggs</small>
+        </div>
+      </div>
+      <div class="st-row">
+<div class="st-card scroll-reveal">
+            <div class="st-num" id="st-mkt-cnt">12+</div>
+          <div class="st-lbl">Verified Local Markets</div>
+        </div>
+<div class="st-card scroll-reveal">
+            <div class="st-num" id="st-prd-cnt">20+</div>
+          <div class="st-lbl">Fresh Produce Items</div>
+        </div>
+<div class="st-card scroll-reveal">
+            <div class="st-num">100%</div>
+          <div class="st-lbl">Community Driven</div>
+        </div>
+<div class="st-card scroll-reveal">
+            <div class="st-num">24/7</div>
+          <div class="st-lbl">Chat Assistant Support</div>
+        </div>
+      </div>
+      <div id="about-blk" style="margin-top: 60px;">
+
+        <div class="sec-t-w">
+          <h2 class="sec-title">About FreshFind Platform</h2>
+          <p class="sec-sub">Connecting communities with local growers and fresh seasonal produce</p>
+        </div>
+        <div style="background:#fff; padding:30px; border-radius:10px; border:1px solid #dddddd; margin-bottom:40px;">
+          <h3 style="color:#000000; margin-bottom:12px;">Background & Necessity</h3>
+          <p style="margin-bottom:0px; color:#111;">
+            Farmers markets play a crucial role in connecting communities with local growers. However, information about
+            operating days, hours, and available seasonal produce is frequently scattered across printed flyers, social
+            media posts, and word-of-mouth.
+          </p>
+        </div>
+
+
+      </div>
+      <div class="about-grid">
+  <div class="about-card">
+    <h3>Our Purpose</h3>
+    <p>
+      FreshFind is designed to help people easily find local farmers markets,
+      check their operating hours, and discover fresh seasonal produce.
+    </p>
+  </div>
+
+  <div class="about-card">
+    <h3>Our Team</h3>
+    <p>
+      FreshFind is developed by KINETICODE, a student team interested in web development,
+technology, and creating useful digital solutions for the community.
+    </p>
+  </div>
+
+  <div class="about-card">
+    <h3>Our Platform</h3>
+    <p>
+      FreshFind is a responsive web platform that provides market information,
+      seasonal produce details, search, bookmarks, and a simple help assistant
+      in one place.
+    </p>
+  </div>
+</div>
+      <div id="cnt-blk" style="margin-top: 60px;">
+        <div class="sec-t-w">
+          <h2 class="sec-title">Contact Us</h2>
+          <p class="sec-sub">Have questions or want to list a new farmers market? Send us a message!</p>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
+          <div style="background:#fff; padding:24px; border-radius:10px; border:1px solid #dddddd;">
+            <h3 style="margin-bottom:20px; color:#000000;">Send a Message</h3>
+<form id="cnt-f" novalidate>
+                <div class="form-box" style="margin-bottom:14px;">
+                <label for="cnt-nm">Full Name</label>
+<input type="text" id="cnt-nm" class="form-inp" placeholder="Your name" required>
+<small class="form-error" id="cnt-nm-error"></small>              </div>
+              <div class="form-box" style="margin-bottom:14px;">
+                <label for="cnt-em">Email Address</label>
+               <input type="email" id="cnt-em" class="form-inp" placeholder="name@example.com" required>
+<small class="form-error" id="cnt-em-error"></small>
+              </div>
+              <div class="form-box" style="margin-bottom:14px;">
+                <label for="cnt-sbj">Subject</label>
+             <input type="text" id="cnt-sbj" class="form-inp" placeholder="Market Query / Recommendation" required>
+<small class="form-error" id="cnt-sbj-error"></small>
+              </div>
+              <div class="form-box" style="margin-bottom:18px;">
+                <label for="cnt-msg">Message</label>
+                <textarea id="cnt-msg" class="form-inp" rows="4" placeholder="Write your query here..."
+  required></textarea>
+<small class="form-error" id="cnt-msg-error"></small>
+              </div>
+              <button type="submit" class="btn-p" style="width:100%; justify-content:center;">Send Message</button>
+            </form>
+          </div>
+          <div>
+            <div
+              style="background:#fff; padding:24px; border-radius:10px; border:1px solid #dddddd; margin-bottom:20px;">
+              <h3 style="color:#000000; margin-bottom:16px;">Community Headquarters</h3>
+              <p style="margin-bottom:10px; font-size:14px; color:#111;">tariq road Karachi</p>
+              <p style="margin-bottom:10px; font-size:14px; color:#111;">+92 3412345667</p>
+              <p style="margin-bottom:10px; font-size:14px; color:#111;">support@gmail.com</p>
+              <p style="font-size:14px; color:#111;">Mon - Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+            <div class="map-box">
+              <iframe src="https://maps.google.com/maps?q=Central+City+Market&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                title="FreshFind Office Location"></iframe>
+            </div>
+            <p id="location-status" style="margin-top:10px; font-size:13px; color:#555;">
+  Your live location will be used to help find nearby markets.
+</p>
+
+<button type="button" id="get-location-btn" class="btn-o btn-sm" style="margin-top:8px;">
+  <i class="fas fa-location-crosshairs"></i> Use My Location
+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="mkts-sec" class="pg-sec">
+      <div class="sec-t-w">
+        <h2 class="sec-title">Farmers Market Directory</h2>
+        <p class="sec-sub">Browse and filter local markets by location, operating days, and available produce</p>
+      </div>
+      <div class="fltr-bar">
+        <input type="text" id="f-srch" class="form-inp" placeholder="Search markets, areas..." autocomplete="off">
+<p id="directory-location-status" style="font-size:13px; color:#555; margin-top:8px;">
+  Location can be used to find nearby markets.
+</p>
+        </div>
+        <div class="fltr-grp">
+          <select id="f-area" class="form-inp">
+            <option value="">All Neighborhoods</option>
+          </select>
+          <select id="f-day" class="form-inp">
+            <option value="">Any Operating Day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+          <select id="f-prod" class="form-inp">
+            <option value="">All Produce Types</option>
+          </select>
+         <select id="f-sort" class="form-inp">
+  <option value="name">Sort: Name (A-Z)</option>
+  <option value="name-desc">Sort: Name (Z-A)</option>
+  <option value="rating">Sort: Top Rated</option>
+  <option value="next-open">Sort: Next Open Day</option>
+  <option value="proximity">Sort: Nearest to Me</option>
+</select>
+          <button id="rst-btn" class="btn-s btn-sm">Reset</button>
+        </div>
+      </div>
+      <div class="card-grid" id="mkt-grid">
+      </div>
+    </section>
+    <section id="prod-sec" class="pg-sec">
+      <div class="sec-t-w">
+        <h2 class="sec-title">Seasonal Produce Guide</h2>
+        <p class="sec-sub">Learn about seasonal fruits, vegetables, nutritional facts, and which markets sell them</p>
+      </div>
+      <div style="display:flex; justify-content:center; gap:10px; margin-bottom: 30px; flex-wrap:wrap;">
+        <button class="btn-o pro-c-btn active" data-cat="All">All Items</button>
+        <button class="btn-o pro-c-btn" data-cat="Vegetables">Vegetables</button>
+        <button class="btn-o pro-c-btn" data-cat="Fruits">Fruits</button>
+        <button class="btn-o pro-c-btn" data-cat="Herbs">Herbs</button>
+        <button class="btn-o pro-c-btn" data-cat="Dairy & Eggs">Dairy & Eggs</button>
+      </div>
+      <div class="card-grid" id="prod-grid">
+      </div>
+    </section>
+    <section id="bms-sec" class="pg-sec">
+      <div class="sec-t-w">
+        <h2 class="sec-title">My Saved Bookmarks & Session Notes</h2>
+        <p class="sec-sub">View your saved markets, seasonal produce items, and personal notes</p>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:12px; margin-bottom:20px;">
+        <button id="exp-bm-btn" class="btn-p btn-sm">Export Bookmarks (.txt)</button>
+      </div>
+      <div id="bm-cont">
+      </div>
+    </section>
+  </main>
+  <div class="modal-bg" id="mkt-mdl">
+    <div class="modal-box">
+      <div class="m-head">
+        <div>
+          <div class="bc-bar">Directory &gt; <span id="bc-name">Market Details</span></div>
+          <h2 id="mdl-title" style="color:#000000; font-size:20px;">Market Name</h2>
+        </div>
+<button class="m-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="m-body">
+        <p id="mdl-addr" style="font-weight:bold; color:#111; margin-bottom:12px;"></p>
+        <p id="mdl-desc" style="margin-bottom:16px; font-size:14px; color:#111;"></p>
+        <p id="mdl-phn" style="margin-bottom:8px; font-size:14px; color:#111;"></p>
+        <p id="mdl-hrs" style="margin-bottom:20px; font-size:14px; color:#2e7d32; font-weight:bold;"></p>
+        <p id="mdl-open-status" style="margin-bottom:20px; font-size:14px; font-weight:bold;"></p>
+        <h3 style="font-size:16px; color:#000000; margin-bottom:8px;">Weekly Schedule</h3>
+        <table class="sch-tbl">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Operating Hours Status</th>
+            </tr>
+          </thead>
+          <tbody id="sch-body">
+          </tbody>
+        </table>
+        <h3 style="font-size:16px; color:#000000; margin-top:20px; margin-bottom:10px;">Typical Produce Available</h3>
+        <div id="avail-prod" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;"></div>
+        <h3 style="font-size:16px; color:#000000; margin-bottom:8px;">Location Map</h3>
+        <div class="map-box">
+          <iframe id="map-iframe" src="" title="Market Google Map"></iframe>
+        </div>
+        <div class="note-area">
+          <div style="margin-bottom:20px;">
+  <h4 style="margin-bottom:10px;">Share This Market</h4>
+
+  <div style="display:flex; gap:8px; flex-wrap:wrap;">
+    <button class="btn-o btn-sm" id="share-whatsapp">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </button>
+
+    <button class="btn-o btn-sm" id="share-facebook">
+      <i class="fab fa-facebook"></i> Facebook
+    </button>
+
+    <button class="btn-o btn-sm" id="share-twitter">
+      <i class="fab fa-twitter"></i> Twitter
+    </button>
+  </div>
+</div>
+          <h4>Personal Session Note</h4>
+          <textarea id="note-inp" class="form-inp" rows="2"
+            placeholder="e.g. Remember to buy honeycrisp apples..."></textarea>
+          <button id="save-n-btn" class="btn-p btn-sm" style="margin-top:10px;">Save Note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-icon" id="chat-btn" title="Ask Help Assistant">
+    <i class="fas fa-comments"></i>
+  </div>
+  <div class="chat-box" id="chat-wnd">
+    <div class="chat-head">
+      <h4>FreshFind Help Assistant</h4>
+      <button class="chat-cls" id="chat-c-btn">&times;</button>
+    </div>
+    <div class="chat-body" id="chat-msgs">
+      <div class="msg-bbl bot-msg">
+        Hello! Welcome to FreshFind Help Assistant. How can I help you discover markets or fresh seasonal produce today?
+      </div>
+      <div class="qr-box">
+        <button class="qr-btn">Which markets are open today?</button>
+        <button class="qr-btn">Find organic tomatoes</button>
+        <button class="qr-btn">How to bookmark?</button>
+      </div>
+    </div>
+    <div class="chat-in-box">
+     <input type="text" id="chat-inp" placeholder="Type a question..." aria-label="Ask FreshFind Help Assistant">
+<button id="chat-s-btn" aria-label="Send message">
+  <i class="fas fa-paper-plane"></i>
+</button>
+    </div>
+  </div>
+<footer>
+  <div class="ftr-cont">
+
+    <div class="ftr-col ftr-brand">
+      <div class="ftr-logo">
+        <i class="fas fa-leaf"></i>
+        <span>FreshFind</span>
+      </div>
+
+      <p>
+        Discover local farmers' markets, seasonal produce,
+        opening hours, and fresh food near you.
+      </p>
+
+      <div class="ftr-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="ftr-col">
+      <h3>Explore</h3>
+
+      <ul>
+        <li>
+          <a href="#" onclick="showSection('home-sec'); return false;">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="#" onclick="showSection('mkts-sec'); return false;">
+            Market Directory
+          </a>
+        </li>
+
+        <li>
+          <a href="#" onclick="showSection('prod-sec'); return false;">
+            Produce Guide
+          </a>
+        </li>
+
+        <li>
+          <a href="#" onclick="showSection('bms-sec'); return false;">
+            Saved Bookmarks
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="ftr-col">
+      <h3>Quick Links</h3>
+
+      <ul>
+        <li>
+          <a href="#" onclick="showSection('home-sec'); document.getElementById('about-blk').scrollIntoView({behavior:'smooth'}); return false;">
+            About FreshFind
+          </a>
+        </li>
+
+        <li>
+          <a href="#" onclick="showSection('home-sec'); document.getElementById('cnt-blk').scrollIntoView({behavior:'smooth'}); return false;">
+            Contact Us
+          </a>
+        </li>
+
+        <li>
+          <a href="#" onclick="showSection('prod-sec'); return false;">
+            Seasonal Produce
+          </a>
+        </li>
+
+        <li>
+          <a href="#" onclick="showSection('mkts-sec'); return false;">
+            Find a Market
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="ftr-col ftr-contact" id="conta">
+      <h3>Get in Touch</h3>
+
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        Karachi, Pakistan
+      </p>
+
+      <p>
+        <i class="fas fa-phone"></i>
+        +92 3412345667
+      </p>
+
+      <p>
+        <i class="fas fa-envelope"></i>
+        support@freshfind.org
+      </p>
+
+      <p>
+        <i class="far fa-clock"></i>
+        Monday – Friday: 9 AM – 5 PM
+      </p>
+    </div>
+
+  </div>
+
+  <div class="ftr-bot">
+    <p>
+      © 2026 FreshFind Project. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
